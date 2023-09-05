@@ -4,3 +4,4 @@ provider "random" {
 resource "random_id" "server" { 
   byte_length = 10
 }
+
