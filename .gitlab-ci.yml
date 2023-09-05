@@ -1,0 +1,14 @@
+include:
+  - template: Terraform.latest.gitlab-ci.yml
+
+deploy:
+  environment:
+    name: $TF_STATE_NAME
+    action: start
+    on_stop: destroy
+
+destroy:
+  extends: .terraform:destroy
+  environment:
+    name: $TF_STATE_NAME
+    action: stop
